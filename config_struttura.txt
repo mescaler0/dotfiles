@@ -1,0 +1,26 @@
+## Struttura finale
+```
+~/.config/waybar/
+├── config          # Configurazione moduli (da dotfiles)
+├── style.css       # Stili strutturali (da dotfiles) 
+└── colors.css      # GENERATO da wallust (NON in dotfiles)
+```
+
+## Nel tuo dotfiles
+```
+~/dotfiles/
+├── waybar/
+│   └── .config/waybar/
+│       ├── config
+│       └── style.css          # SOLO questo
+├── wallust/
+│   └── .config/wallust/
+│       ├── wallust.toml
+│       └── templates/
+│           ├── waybar.css     # Template per colors.css
+│           ├── hyprland.conf
+│           ├── rofi.rasi
+│           ├── kitty.conf
+│           └── dunstrc                 # QUESTO contiene tutto
+│
+├── dunst/                          # Cartella VUOTA    

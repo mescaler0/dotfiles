@@ -1,0 +1,108 @@
+/**
+ * Wallpaper Gallery - Scorrimento orizzontale
+ * 1 riga x 4 miniature alla volta
+ */
+
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: @fg;
+    font: "Cascadia Code 10";
+}
+
+window {
+    transparency: "real";
+    background-color: @bg;
+    border: 2px solid;
+    border-color: @primary;
+    border-radius: 12px;
+    width: 1000px;
+    height: 400px;
+    padding: 20px;
+    location: center;
+}
+
+mainbox {
+    spacing: 15px;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    background-color: @color0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    spacing: 10px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @primary;
+    font: "Cascadia Code Bold 12";
+}
+
+entry {
+    placeholder: "Search wallpapers...";
+    placeholder-color: @color8;
+    text-color: @fg;
+}
+
+listview {
+    lines: 1;              /* 1 RIGA */
+    columns: 4;            /* 4 COLONNE */
+    spacing: 15px;
+    scrollbar: true;
+    fixed-height: true;
+    fixed-columns: true;
+    flow: horizontal;      /* Scorrimento orizzontale */
+    cycle: true;           /* Torna all'inizio quando arrivi alla fine */
+}
+
+element {
+    orientation: vertical;
+    border-radius: 10px;
+    padding: 10px;
+    spacing: 10px;
+    background-color: @color0;
+    cursor: pointer;
+}
+
+element selected {
+    background-color: @primary;
+    border: 3px solid;
+    border-color: @accent;
+}
+
+element-icon {
+    size: 200px;           /* Dimensione miniatura */
+    border-radius: 8px;
+    horizontal-align: 0.5;
+    border: 2px solid;
+    border-color: @color8;
+}
+
+element selected element-icon {
+    border-color: @accent;
+    border-width: 3px;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    font: "Cascadia Code 10";
+    text-color: @fg;
+}
+
+element selected element-text {
+    text-color: @bg;
+    font: "Cascadia Code Bold 10";
+}
+
+scrollbar {
+    handle-width: 100%;     /* Scrollbar orizzontale largo */
+    handle-color: @primary;
+    background-color: @color0;
+    border-radius: 4px;
+    padding: 4px 0;
+    margin: 10px 0 0 0;
+}

@@ -1,0 +1,59 @@
+/* ~/dotfiles/rofi/.config/rofi/config.ras */
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    font: "Cascadia Code 10";
+}
+
+/* Import colori generati da wallust */
+@import "colors.rasi"
+
+window {
+    background-color: @bg;
+    border: 2px;
+    border-color: @primary;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+}
+
+mainbox {
+    spacing: 10px;
+}
+
+inputbar {
+    background-color: @color0;
+    border-radius: 5px;
+    padding: 8px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @primary;
+    padding: 0 10px 0 0;
+}
+
+entry {
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;
+    spacing: 5px;
+}
+
+element {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+element selected {
+    background-color: @primary;
+    text-color: @bg;
+}
+
+element-icon {
+    size: 24px;
+}

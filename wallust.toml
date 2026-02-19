@@ -1,0 +1,9 @@
+#must be located under ~/dotfiles/wallust/.config/wallust/wallust.toml
+
+
+[settings]
+backend = "resized"
+palette = "dark16"
+
+[templates]
+waybar = { template = "waybar.css", target = "~/.config/waybar/colors.css" }
